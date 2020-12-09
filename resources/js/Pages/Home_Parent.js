@@ -34,7 +34,7 @@ const Home_Parent = (orders_list)=> {
         <Page>
             <Layout>
                 <Layout.Section>
-                        <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://a97a379064df.ngrok.io/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
+                        <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://app.storeks.com/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
                         <Card>
                             <div className="Polaris-Page__Content">
                                 <div className="Polaris-Card">

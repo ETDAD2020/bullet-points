@@ -41,7 +41,7 @@ const Home = (orders_list)=> {
         toggleActive();
         const formData = new FormData();
         formData.append('product', e);
-        Inertia.post('https://a97a379064df.ngrok.io/app-setting-product', formData);
+        Inertia.post('https://app.storeks.com/app-setting-product', formData);
     }
 
     function handleChange1(e){
@@ -49,7 +49,7 @@ const Home = (orders_list)=> {
         toggleActive();
         const formData = new FormData();
         formData.append('cart', e);
-        Inertia.post('https://a97a379064df.ngrok.io/app-setting-cart', formData);
+        Inertia.post('https://app.storeks.com/app-setting-cart', formData);
     }
 
 
@@ -60,7 +60,7 @@ const Home = (orders_list)=> {
         toggleActive();
         const formData = new FormData();
         formData.append('notification_type', newValue);
-        Inertia.post('https://a97a379064df.ngrok.io/set-notification', formData);
+        Inertia.post('https://app.storeks.com/set-notification', formData);
 
     }
 
@@ -70,7 +70,7 @@ const Home = (orders_list)=> {
         <Page>
             <Layout>
                 <Layout.Section>
-                    <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://a97a379064df.ngrok.io/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
+                    <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://app.storeks.com/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
                     <Card title="Show Add Insurance Button" sectioned>
                         <p>Please check the option below to show the add insurance option on the pages</p>
                         <Checkbox label="Show on Product Page" id="product-page" value="product" checked={checked} onChange={handleChange} />

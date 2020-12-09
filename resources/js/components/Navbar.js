@@ -12,13 +12,13 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="collapsibleNavId">
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className={url == '/' ? 'nav-item active' : 'nav-item'}>
-                            <InertiaLink className="nav-link" href="https://a97a379064df.ngrok.io/">Home</InertiaLink>
+                            <InertiaLink className="nav-link" href="https://app.storeks.com/">Home</InertiaLink>
                         </li>
                         <li className={url == '/user' ? 'nav-item active' : 'nav-item'}>
-                            <InertiaLink className="nav-link" href="https://a97a379064df.ngrok.io/user">Users</InertiaLink>
+                            <InertiaLink className="nav-link" href="https://app.storeks.com/user">Users</InertiaLink>
                         </li>
                         <li className={url == '/user/create' ? 'nav-item active' : 'nav-item'}>
-                            <InertiaLink className="nav-link" href="https://a97a379064df.ngrok.io/user/create">Add Users</InertiaLink>
+                            <InertiaLink className="nav-link" href="https://app.storeks.com/user/create">Add Users</InertiaLink>
                         </li>
                     </ul>
                 </div>

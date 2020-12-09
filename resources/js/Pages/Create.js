@@ -20,8 +20,8 @@ const create = ({errors}) => {
         formData.append('email', values.email);
         formData.append('password', values.password);
         formData.append('password_confirmation', values.password_confirmation);
-        Inertia.post('https://a97a379064df.ngrok.io/user', formData);
-        // Inertia.post('https://a97a379064df.ngrok.io/user', values);
+        Inertia.post('https://app.storeks.com/user', formData);
+        // Inertia.post('https://app.storeks.com/user', values);
     }
     return (
         <Front>

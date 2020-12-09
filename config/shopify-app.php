@@ -280,11 +280,11 @@ return [
     'webhooks' => [
             [
                 'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://a97a379064df.ngrok.io/webhook/orders-create')
+                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://app.storeks.com/webhook/orders-create')
             ],
             [
                 'topic' => env('SHOPIFY_WEBHOOK_2_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_2_ADDRESS', 'https://a97a379064df.ngrok.io/webhook/orders-create')
+                'address' => env('SHOPIFY_WEBHOOK_2_ADDRESS', 'https://app.storeks.com/webhook/orders-create')
             ],
     ],
 
@@ -299,7 +299,7 @@ return [
 
     'scripttags' => [
             [
-                'src' => env('SHOPIFY_SCRIPTTAG_1_SRC', 'https://a97a379064df.ngrok.io/js/storefront.js'),
+                'src' => env('SHOPIFY_SCRIPTTAG_1_SRC', 'https://app.storeks.com/js/storefront.js'),
                 'event' => env('SHOPIFY_SCRIPTTAG_1_EVENT', 'onload'),
                 'display_scope' => env('SHOPIFY_SCRIPTTAG_1_DISPLAY_SCOPE', 'online_store')
             ],
