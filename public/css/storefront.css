@@ -1,0 +1,374 @@
+.onoffswitch {
+position: relative; width: 90px;
+-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+.onoffswitch-label {
+display: block !important;
+overflow: hidden;
+cursor: pointer !important;
+border: 2px solid #999999;
+border-radius: 20px;
+}
+.onoffswitch-inner {
+display: block; width: 200%; margin-left: -100%;
+transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+display: block;
+float: left;
+width: 50%;
+height: 30px;
+padding: 0;
+line-height: 30px;
+font-size: 14px;
+color: white;
+font-family: Trebuchet, Arial, sans-serif;
+font-weight: bold;
+box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+content: "ON";
+padding-left: 10px;
+background-color: #2296f3; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+content: "OFF";
+padding-right: 10px;
+background-color: #EEEEEE; color: #999999;
+text-align: right;
+}
+.onoffswitch-switch {
+display: block; width: 18px; margin: 6px;
+background: #FFFFFF;
+position: absolute; top: 0; bottom: 0;
+right: 56px;
+border: 2px solid #999999; border-radius: 20px;
+transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+right: 0px;
+}
+
+.route-wrapper {
+    background: #eeee;
+    width: 100%;
+    /* margin-left: 10%; */
+    margin-right: 10%;
+    padding: 20px;
+    box-shadow: 1px 3px 20px #d2d2d2;
+    clear: both;
+    display: block;
+    height: 72px;
+}
+
+.route-left {
+    float:left;
+    width: 80%;
+}
+
+.route-right {
+    float:right;
+    width: 20%;
+}
+
+.route-cart {
+    margin-top: 20px;
+}
+
+.route-cart img {
+    width: 4% !important;
+}
+
+.route-wrapper h6 {
+    margin: 0px;
+    font-size: 16px;
+
+}
+
+.route-wrapper img {
+    width: 12%;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.storeks-modal .route-wrapper img {
+    width: 7%;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.route-wrapper p{
+    margin: 0px;
+    font-size: 12px;
+}
+
+
+.storeks-modal {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(51, 51, 51, 0.5);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .storeks-modal-container {
+    display: -webkit-box;
+    display: flex;
+    max-width: 720px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    background: #fff;
+    -webkit-transform: translateY(100px) scale(0.4);
+            transform: translateY(100px) scale(0.4);
+  }
+  .storeks-modal-title {
+    font-size: 26px;
+    margin: 0;
+    font-weight: 400;
+    color: #55311c;
+  }
+  .storeks-modal-desc {
+    margin: 6px 0 30px 0;
+  }
+  .storeks-modal-left {
+    padding: 60px 30px 20px;
+    background: #fff;
+    -webkit-box-flex: 1.5;
+            flex: 1.5;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  .storeks-modal-button {
+    color: #7d695e;
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    padding: 10px 40px;
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .storeks-modal-button:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .storeks-modal-right {
+    -webkit-box-flex: 2;
+            flex: 2;
+    font-size: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+  .storeks-modal-right img {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transition-duration: 1.2s;
+            transition-duration: 1.2s;
+  }
+  .storeks-modal.is-open {
+    height: 100%;
+    background: rgba(51, 51, 51, 0.85);
+  }
+  .is-open .storeks-modal-button {
+    opacity: 0;
+  }
+  .is-open .storeks-modal-container {
+    opacity: 1;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    pointer-events: auto;
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+  }
+  .is-open .storeks-modal-right img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .is-open .storeks-modal-left {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  .storeks-modal-buttons {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+  .storeks-modal-buttons a {
+    color: rgba(51, 51, 51, 0.6);
+    font-size: 14px;
+  }
+
+  .storeks-sign-up {
+    margin: 60px 0 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  .storeks-sign-up a {
+    color: #8c7569;
+  }
+
+  .storeks-input-button {
+    padding: 8px 12px;
+    outline: none;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    background: #8c7569;
+    font-family: "Nunito", sans-serif;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .storeks-input-button:hover {
+    background: #55311c;
+  }
+
+  .storeks-input-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: #8c7569;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .storeks-input-block {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 10px 10px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .storeks-input-block input {
+    outline: 0;
+    border: 0;
+    padding: 4px 0 0;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+  }
+  .storeks-input-block input::-webkit-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  .storeks-input-block input::-moz-placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  .storeks-input-block input:-ms-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  .storeks-input-block input::-ms-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  .storeks-input-block input::placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  .storeks-input-block:focus-within {
+    border-color: #8c7569;
+  }
+  .storeks-input-block:focus-within .input-label {
+    color: rgba(140, 117, 105, 0.8);
+  }
+
+  .icon-button {
+    outline: 0;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .scroll-down {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+    text-align: center;
+    color: #7d695e;
+    font-size: 32px;
+    font-weight: 800;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .scroll-down svg {
+    margin-top: 16px;
+    width: 52px;
+    fill: currentColor;
+  }
+
+  @media (max-width: 750px) {
+    .storeks-modal-container {
+      width: 90%;
+    }
+
+    .storeks-modal-right {
+      display: none;
+    }
+  }
