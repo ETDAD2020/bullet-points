@@ -18,7 +18,7 @@
     box-shadow: 0px 0px 8px #404040;
 }
 #app{
-    background-image: url(https://cdn.shopify.com/s/files/1/0514/1276/2822/files/background.jpeg?v=1607610435);
+    /* background-image: url(https://cdn.shopify.com/s/files/1/0514/1276/2822/files/background.jpeg?v=1607610435); */
 }
 </style>
 @endsection
