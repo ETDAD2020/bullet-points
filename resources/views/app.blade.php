@@ -7,6 +7,20 @@
   rel="stylesheet"
   href="https://unpkg.com/@shopify/polaris@5.5.0/dist/styles.css"
 />
+
+<style>
+.Polaris-Card__Header{
+    background: #E91E63;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.Polaris-Card{
+    box-shadow: 0px 0px 8px #404040;
+}
+#app{
+    background-image: url(https://cdn.shopify.com/s/files/1/0514/1276/2822/files/background.jpeg?v=1607610435);
+}
+</style>
 @endsection
 
 @section('content')
