@@ -70,7 +70,7 @@ const Home = (orders_list)=> {
         <TitleBar title="Dashboard" />
         <Page>
             <Layout>
-                <Layout.Section style={mystyle2}>
+                <Layout.Section>
                     <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://app.storeks.com/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
                     <Card title="Show Add Insurance Button" sectioned>
                         <p>Please check the option below to show the add insurance option on the pages</p>
