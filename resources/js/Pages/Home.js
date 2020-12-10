@@ -22,8 +22,9 @@ const Home = (orders_list)=> {
     const [checked1, setChecked1] = useState(orders_list.app_settings[0].cart_page ? true : false);
     const [value, setValue] = useState(orders_list.app_settings[0].notification_type);
 
+
     const mystyle = {
-        width: "164px"
+        width: "164px",
       };
 
     const mystyle2 = {
@@ -69,7 +70,7 @@ const Home = (orders_list)=> {
         <TitleBar title="Dashboard" />
         <Page>
             <Layout>
-                <Layout.Section>
+                <Layout.Section style={mystyle2}>
                     <div className="Polaris-TopBar__LogoContainer" style={mystyle2}><a className="Polaris-TopBar__LogoLink" href="http://storeks.com/" data-polaris-unstyled="true" style={mystyle}><img src="https://app.storeks.com/image/StoreksLogo.png" alt="Jaded Pixel" className="Polaris-TopBar__Logo" style={mystyle} /></a></div>
                     <Card title="Show Add Insurance Button" sectioned>
                         <p>Please check the option below to show the add insurance option on the pages</p>
