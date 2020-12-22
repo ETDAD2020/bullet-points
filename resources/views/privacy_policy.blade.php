@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Storeks Privacy Policy</title>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/@shopify/polaris@5.5.0/dist/styles.css"
+/>
 </head>
 <body>
     <p>Storeks Insurace Privacy Policy</p>
