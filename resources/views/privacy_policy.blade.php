@@ -11,8 +11,8 @@
 />
 </head>
 <body>
-    <h1>Storeks Insurace Privacy Policy</h1>
-    <ul>
+    <h1 style="text-align: center;font-size: 30px;padding: 40px;font-weight: 900;text-decoration: underline;">Storeks Insurace Privacy Policy</h1>
+    <ul style="padding-left: 30%;padding-right: 30%;">
         <li><p>Storeks Insurace "the App” provides insurace on shipping "the Service" to merchants who use Shopify to power their stores. This Privacy Policy describes how personal information is collected, used, and shared when you install or use the App in connection with your Shopify-supported store.</p></li>
         <h3>Personal Information the App Collects</h3>
         <li><p>When you install the App, we are automatically able to access certain types of information from your Shopify account: </p></li>
