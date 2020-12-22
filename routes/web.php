@@ -28,6 +28,7 @@ Route::post('/app-setting-cart', [AppSetting::class, 'app_set_cart'])->middlewar
 Route::post('/set-notification', [AppSetting::class, 'notification_setting'])->middleware(['auth.shopify'])->name('set-notification');
 Route::get('/get-app-settings', [AppSetting::class, 'get_app_settings'])->name('get-app-settings');
 Route::get('/get-popup-type', [HomeController::class, 'get_popup'])->middleware(['auth.shopify'])->name('show_pop_up');;
+Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');;
 
 Route::resource('user', UserController::class);
 
