@@ -279,12 +279,8 @@ return [
 
     'webhooks' => [
             [
-                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://app.storeks.com/webhook/orders-create')
-            ],
-            [
-                'topic' => env('SHOPIFY_WEBHOOK_2_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_2_ADDRESS', 'https://app.storeks.com/webhook/orders-create')
+                'topic' => 'app/uninstalled',
+                'address' => 'https://66436c8cb1ed.ngrok.io/webhook/app-uninstall'
             ],
     ],
 

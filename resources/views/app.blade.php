@@ -9,13 +9,8 @@
 />
 
 <style>
-.Polaris-Card__Header{
-    background: #E91E63;
-    color: #fff;
-    padding-bottom: 20px;
-}
-.Polaris-Card{
-    box-shadow: 0px 0px 8px #404040;
+.Polaris-Frame{
+    min-height: 0vh;
 }
 #app{
     /* background-image: url(https://cdn.shopify.com/s/files/1/0514/1276/2822/files/background.jpeg?v=1607610435); */

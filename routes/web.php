@@ -20,17 +20,8 @@ use Inertia\Inertia;
 */
 
 // Route::get('/', function () {
-//     return Inertia::render('Home')->withViewData(["title" => "HomePage"]);
-// });
+//     return Inertia::render('Home');
+// })->middleware(['auth.shopify']);
 Route::get('/', [HomeController::class, 'index'])->middleware(['auth.shopify'])->name('home');
-Route::post('/app-setting-product', [AppSetting::class, 'app_set_product'])->middleware(['auth.shopify'])->name('app-setting-product');
-Route::post('/app-setting-cart', [AppSetting::class, 'app_set_cart'])->middleware(['auth.shopify'])->name('app-setting-cart');
-Route::post('/set-notification', [AppSetting::class, 'notification_setting'])->middleware(['auth.shopify'])->name('set-notification');
+Route::post('/disable-settings', [AppSetting::class, 'disable_settings'])->middleware(['auth.shopify'])->name('disable-settings');
 Route::get('/get-app-settings', [AppSetting::class, 'get_app_settings'])->name('get-app-settings');
-Route::get('/get-popup-type', [HomeController::class, 'get_popup'])->middleware(['auth.shopify'])->name('show_pop_up');;
-Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');;
-
-Route::resource('user', UserController::class);
-
-Route::post('webhook/orders-create', [OrderWebhook::class, 'index'])->name('orders-create');
-// Route::post('webhook/app-uninstall', [UninstallWebhook::class, 'index'])->name('app-setting-cart');

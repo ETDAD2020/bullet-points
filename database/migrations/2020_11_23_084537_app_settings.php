@@ -16,14 +16,16 @@ class AppSettings extends Migration
         Schema::create('app_settings', function (Blueprint $table) {
             $table->id();
             $table->text('shopify_name');
-            $table->boolean('product_page');
-            $table->boolean('cart_page');
-            $table->text('notification_type');
-            $table->bigInteger('variant_id');
-            $table->bigInteger('product_id');
+            $table->string('disable_right_click')->nullable();
+            $table->string('disable_f12')->nullable();
+            $table->string('disable_copy')->nullable();
+            $table->string('disable_ctrl_shift_i')->nullable();
+            $table->string('disable_ctrl_anykey')->nullable();
+            $table->string('disable_text_image_selection')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
