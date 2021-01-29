@@ -280,7 +280,7 @@ return [
     'webhooks' => [
             [
                 'topic' => 'app/uninstalled',
-                'address' => 'https://66436c8cb1ed.ngrok.io/webhook/app-uninstall'
+                'address' => 'https://disable-right-click.ecomvert.net/webhook/app-uninstall'
             ],
     ],
 

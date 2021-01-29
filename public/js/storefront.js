@@ -23,7 +23,7 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
     var shop_domain = Shopify.shop;
     var page_url = $(location).attr("href");
     $(document).ready(function() {
-        $.getJSON("https://66436c8cb1ed.ngrok.io/get-app-settings?shop_name=" + shop_domain, function (data) {
+        $.getJSON("https://disable-right-click.ecomvert.net/get-app-settings?shop_name=" + shop_domain, function (data) {
             console.log(data);
             var disable_right_click  = data[0].disable_right_click;
             var disable_f12  = data[0].disable_f12;
