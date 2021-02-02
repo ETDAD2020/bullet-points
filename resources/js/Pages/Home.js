@@ -102,7 +102,7 @@ function Home(settings) {
       logo: {
         width: 124,
         topBarSource:
-          '/image/disable-right-click.png',
+          'https://www.authorized.by/wp-content/uploads/2020/04/abtsg-logo-header-english-blue.svg',
         url: '#',
         accessibilityLabel: 'Disable Right Click',
       },
@@ -129,44 +129,26 @@ function Home(settings) {
                 <Frame topBar={topBarMarkup} />
                 <Page  primaryAction={{ disabled: true }} fullWidth={true} separator>
                     <Layout>
-                        <Layout.AnnotatedSection title="Disable Right Click App Settings" description="Here you can choose the option which you want to enable or disable">
-                            <Card title="Disable Right Click App Settings" sectioned>
+                        <Layout.AnnotatedSection title="authorized.by App Settings" description="The authorized.by® platform enables brands and manufacturers to authorize online business partners who can be trusted by using a realtime seal valid across the board.">
+                            <Card title="authorized.by App Settings" sectioned>
                                 <Form>
                                     <FormLayout>
                                         <Checkbox
-                                            label="Disable Right Click"
+                                            label="Enable Header Seal"
                                             checked={disablerightclick}
                                             onChange={handledisablerightclick}
                                             onClick={toggleActive}
                                         />
                                         <Checkbox
-                                            label="Disable F12"
+                                            label="Enable Footer Seal"
                                             checked={disablef12}
                                             onChange={handledisablef12}
                                             onClick={toggleActive}
                                         />
                                         <Checkbox
-                                            label="Disable Copy"
+                                            label="Enable Content Seal"
                                             checked={disablecopy}
                                             onChange={handledisablecopy}
-                                            onClick={toggleActive}
-                                        />
-                                         <Checkbox
-                                            label="Disable CTRL + SHIFT + I"
-                                            checked={disablectrlshifti}
-                                            onChange={handledisablectrlshifti}
-                                            onClick={toggleActive}
-                                        />
-                                         <Checkbox
-                                            label="Disable CTRL + Anykey"
-                                            checked={disablectrlanykey}
-                                            onChange={handledisablectrlanykey}
-                                            onClick={toggleActive}
-                                        />
-                                         <Checkbox
-                                            label="Disable Text Selection & Image Drag"
-                                            checked={disableselection}
-                                            onChange={handledisableselection}
                                             onClick={toggleActive}
                                         />
                                     </FormLayout>
@@ -176,8 +158,8 @@ function Home(settings) {
                     </Layout>
                     <FooterHelp>
                         Learn more about{' '}
-                        <Link url="#">
-                            Cocoon Pay
+                        <Link url="https://www.authorized.by/">
+                            <strong>authorized.by®</strong>
                         </Link>
                     </FooterHelp>
                     {toastMarkup}

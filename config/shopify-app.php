@@ -279,8 +279,8 @@ return [
 
     'webhooks' => [
             [
-                'topic' => 'app/uninstalled',
-                'address' => 'https://disable-right-click.ecomvert.net/webhook/app-uninstall'
+                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://52998355932c.ngrok.io/webhook/app-uninstall')
             ],
     ],
 
