@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
+
         <title>{{ config('shopify-app.app_name') }}</title>
     <!-- <link rel="stylesheet" href="http://localhost:3000/css/bootstrap4/dist/css/bootstrap-custom.css?v=datetime"> -->
     <link rel="stylesheet" href="{{ asset('polished.min.css') }}">
@@ -41,7 +41,7 @@
 <body>
 
 <nav class="navbar navbar-expand p-0">
-    <a class="navbar-brand text-left col-xs-12 col-md-3 col-lg-2 mr-2 text-white" ><img src="{{ asset('logo.jpeg') }}" alt="" style="width: 25px; height: auto; margin-right: 5px; margin-bottom: 5px;">Bullet Pointer</a>
+    <a class="navbar-brand text-left col-xs-12 col-md-3 col-lg-2 mr-2 text-white" ><img src="{{ asset('IconTransp.png') }}" alt="" style="width: 25px; height: auto; margin-right: 5px; margin-bottom: 5px;">Bullet Pointer</a>
     <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
         <span class="oi oi-menu"></span>
     </button>
