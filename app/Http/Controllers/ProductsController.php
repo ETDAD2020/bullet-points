@@ -105,9 +105,10 @@ class ProductsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-
+        $user_id = $request->get('user_id');
+        Auth::loginUsingId($user_id, true);
         $product = Product::find($id);
         $settings = Customizer::where('store_id', Auth::user()->id)->first();
 
