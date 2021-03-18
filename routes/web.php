@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('welcome');})->middleware(['auth.shopify', 'billable'])->name('home');
+Route::get('/', function () {
+    dd(Auth::check());
+    return view('welcome');
+})->middleware(['auth.shopify', 'billable'])->name('home');
 
 Route::middleware(['auth.shopify', 'billable'])->group(function () {
     Route::resource('products', 'ProductsController');
