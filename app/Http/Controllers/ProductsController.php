@@ -19,7 +19,6 @@ class ProductsController extends Controller
     public function index()
     {
         $shop = Auth::user();
-        dd($shop);
         $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
         return view('products.index')->with('products', $products);
     }
@@ -105,7 +104,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-
+        dd($id);
         $product = Product::find($id);
         $settings = Customizer::where('store_id', Auth::user()->id)->first();
 
