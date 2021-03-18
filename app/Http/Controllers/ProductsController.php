@@ -110,7 +110,7 @@ class ProductsController extends Controller
         $user_id = $request->get('user_id');
         Auth::loginUsingId($user_id, true);
         $product = Product::find($id);
-        $settings = Customizer::where('store_id', Auth::user()->id)->first();
+        $settings = Customizer::where('store_id', $user_id)->first();
 
         if($settings == null) {
             return redirect()->route('settings.index')->with('error', 'Please First Select Some Icon/Emoji To Proceed');
