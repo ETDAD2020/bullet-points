@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');})->middleware(['auth.shopify', 'billable'])->name('home');
 
-Route::middleware(['auth.shopify'])->group(function () {
+Route::middleware(['auth.shopify', 'billable'])->group(function () {
     Route::resource('products', 'ProductsController');
     Route::resource('settings', 'CustomizersController');
     Route::get('/instructions', 'CustomizersController@showInstructions')->name('instructions');
