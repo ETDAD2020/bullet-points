@@ -6,7 +6,7 @@
             <div class="pl-3 d-flex justify-content-between">
                 <h3>Products</h3>
                 <div>
-                    <a href="{{ route('sync.products') }}" class="btn btn-primary">Sync Products</a>
+                    <a href="{{ route('sync.products') }}" class="btn btn-primary">Sync Products 1</a>
                 </div>
             </div>
         </div>

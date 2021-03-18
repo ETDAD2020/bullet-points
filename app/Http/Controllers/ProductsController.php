@@ -104,7 +104,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        dd($id);
+
         $product = Product::find($id);
         $settings = Customizer::where('store_id', Auth::user()->id)->first();
 
