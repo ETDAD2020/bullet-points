@@ -55,7 +55,7 @@
                 <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
                 @auth
                     @if(auth()->user()->role != 'admin')
-                        <li class="{{ request()->is('/') ? 'active' : ''}}"><a href="{{ route('home') }}"><span class="oi oi-dashboard"></span> Dashboard</a></li>
+                        <li class="{{ request()->is('/') ? 'active' : ''}}"><a href="{{ route('home') }}"><span class="oi oi-dashboard"></span> Dashboard {{ auth()->user()->id }}</a></li>
                         <li class="{{ request()->is('products') ? 'active' : ''}}"><a href="{{ route('products.index') }}"><span class="oi oi-pie-chart"></span>Products</a></li>
                         <li class="{{ request()->is('settings') ? 'active' : ''}}"><a href="{{ route('settings.index') }}"><span class="oi oi-pie-chart"></span>Settings</a></li>
                         <li class="{{ request()->is('instructions') ? 'active' : ''}}"><a href="{{ route('instructions') }}"><span class="oi oi-pie-chart"></span>Instructions</a></li>
