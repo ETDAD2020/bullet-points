@@ -16,6 +16,7 @@ class CustomizersController extends Controller
      */
     public function index()
     {
+        dd(Auth::check());
         $settings = Customizer::where('store_id', Auth::user()->id)->first();
 
         return view('customizer.index')->with('settings', $settings);

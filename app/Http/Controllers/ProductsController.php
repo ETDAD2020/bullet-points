@@ -18,6 +18,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        dd(Auth::check());
         $shop = Auth::user();
         $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
         return view('products.index')->with('products', $products);
