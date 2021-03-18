@@ -79,40 +79,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script src="{{ asset('js/toastr.min.js') }}"></script>
-<script type="text/javascript">
 
-
-    var AppBridge = window['app-bridge'];
-    var actions = AppBridge.actions;
-    var TitleBar = actions.TitleBar;
-    var Button = actions.Button;
-    var Redirect = actions.Redirect;
-    var titleBarOptions = {
-        title: 'Welcome',
-    };
-    var myTitleBar = TitleBar.create(app, titleBarOptions);
-
-    @if(Session::has('success'))
-    toastr.success("{{ Session::get('success') }}") ;
-    @endif
-
-    @if(Session::has('error'))
-    toastr.error("{{ Session::get('error') }}") ;
-    @endif
-</script>
-
-        @if(config('shopify-app.appbridge_enabled'))
-            <script src="https://unpkg.com/@shopify/app-bridge{{ config('shopify-app.appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script>
-            <script>
-                var AppBridge = window['app-bridge'];
-                var createApp = AppBridge.default;
-                var app = createApp({
-                    apiKey: '{{ config('shopify-app.api_key') }}',
-                    shopOrigin: '{{ Auth::user()->name }}',
-                    forceRedirect: true,
-                });
-            </script>
-        @endif
+@if(config('shopify-app.appbridge_enabled'))
+    <script src="https://unpkg.com/@shopify/app-bridge{{ config('shopify-app.appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script>
+    <script>
+        var AppBridge = window['app-bridge'];
+        var createApp = AppBridge.default;
+        var app = createApp({
+            apiKey: '{{ config('shopify-app.api_key') }}',
+            shopOrigin: '{{ Auth::user()->name }}',
+            forceRedirect: true,
+        });
+    </script>
+@endif
 @yield('js')
 
 </body>
