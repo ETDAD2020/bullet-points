@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');})->middleware(['auth.shopify', 'billable'])->name('home');
 
-Route::resource('products', 'ProductsController');
-Route::resource('settings', 'CustomizersController');
-Route::get('/instructions', 'CustomizersController@showInstructions')->middleware(['auth.shopify', 'billable'])->name('instructions');
-Route::get('sync/products', 'ProductsController@storeProducts')->middleware(['auth.shopify', 'billable'])->name('sync.products');
 Route::middleware(['auth.shopify', 'billable'])->group(function () {
+    Route::resource('products', 'ProductsController');
+    Route::resource('settings', 'CustomizersController');
+    Route::get('/instructions', 'CustomizersController@showInstructions')->name('instructions');
+    Route::get('sync/products', 'ProductsController@storeProducts')->name('sync.products');
 });
 
 

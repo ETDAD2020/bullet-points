@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Customizer;
 use App\ExtraDetail;
 use App\Product;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +16,8 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $user_id = $request->get('user_id');
-        Auth::loginUsingId($user_id, true);
         $shop = Auth::user();
         $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
         return view('products.index')->with('products', $products);
@@ -105,12 +102,11 @@ class ProductsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        $user_id = $request->get('user_id');
-        Auth::loginUsingId($user_id, true);
+
         $product = Product::find($id);
-        $settings = Customizer::where('store_id', $user_id)->first();
+        $settings = Customizer::where('store_id', Auth::user()->id)->first();
 
         if($settings == null) {
             return redirect()->route('settings.index')->with('error', 'Please First Select Some Icon/Emoji To Proceed');
