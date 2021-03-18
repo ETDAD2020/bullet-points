@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customizer;
 use App\ExtraDetail;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,9 +17,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $shop = Auth::user();
+        $user_id = $request->get('user_id');
+        dd($user_id);
+        $shop = User::find()
         $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
         return view('products.index')->with('products', $products);
     }
