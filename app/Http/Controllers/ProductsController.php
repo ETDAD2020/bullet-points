@@ -20,8 +20,8 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $user_id = $request->get('user_id');
-        dd($user_id);
-        $shop = User::find()
+        Auth::loginUsingId($user_id, true);
+        $shop = Auth::user();
         $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
         return view('products.index')->with('products', $products);
     }
