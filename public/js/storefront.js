@@ -54,8 +54,8 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
              window.location.href = action_src;
         });
 
-        $.getJSON("https://7911495308e5.ngrok.io/get-app-settings?shop_name=" + shop_domain, function (data) {
-            
+        $.getJSON("https://luxbalance.nl/get-app-settings?shop_name=" + shop_domain, function (data) {
+
             if(data === null)
             {
                 alert("Please adjust setting of Shareall app to use this app. Thanks")
@@ -84,9 +84,9 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
             var popup_heading = data.popup_heading;
             var referral_link_help_text = data.referral_link_help_text;
 
-            $('head').append('<link rel="stylesheet" href="https://7911495308e5.ngrok.io/css/storefront.css" type="text/css" />');
-            $('head').append('<link rel="stylesheet" href="https://7911495308e5.ngrok.io/css/component2.css" type="text/css" />');
-            $('body').append('<div class="md-modal md-effect-16" id="modal-16"><div class="md-content"><div  class="left-side"><h2 class="primary">'+popup_heading+'</h2><p>'+popup_description+'</p> <div class="loader form-data-loader" style="display:none;"></div> <form action="https://7911495308e5.ngrok.io/generate-referral-url" id="generate-referral-form" method="GET"><input type="text" placeholder="Enter Your Name" class="email-input" name="referral-name" id="referral-name" required/><input type="email" placeholder="Enter Your Email" class="email-input" name="referral-email" id="referral-email" required/><input type="submit" class="cta" value="Register"/></form></div><div class="right-side"><div class="arrow-left"></div><a href="#" class="popup_close"><span style="position: absolute;top: 0;right: 2%;font-size: 24px;color: #000000;">x</span></a><img src="https://7911495308e5.ngrok.io/'+popup_image+'" alt="" style="width:100%;"></div></div></div><div class="container"><div class="main clearfix"><div class="column"><button class="md-trigger" data-modal="modal-16">Blur</button></div></div></div><div class="md-overlay"></div><!-- the overlay element -->');
+            $('head').append('<link rel="stylesheet" href="https://luxbalance.nl/css/storefront.css" type="text/css" />');
+            $('head').append('<link rel="stylesheet" href="https://luxbalance.nl/css/component2.css" type="text/css" />');
+            $('body').append('<div class="md-modal md-effect-16" id="modal-16"><div class="md-content"><div  class="left-side"><h2 class="primary">'+popup_heading+'</h2><p>'+popup_description+'</p> <div class="loader form-data-loader" style="display:none;"></div> <form action="https://luxbalance.nl/generate-referral-url" id="generate-referral-form" method="GET"><input type="text" placeholder="Enter Your Name" class="email-input" name="referral-name" id="referral-name" required/><input type="email" placeholder="Enter Your Email" class="email-input" name="referral-email" id="referral-email" required/><input type="submit" class="cta" value="Register"/></form></div><div class="right-side"><div class="arrow-left"></div><a href="#" class="popup_close"><span style="position: absolute;top: 0;right: 2%;font-size: 24px;color: #000000;">x</span></a><img src="https://luxbalance.nl/'+popup_image+'" alt="" style="width:100%;"></div></div></div><div class="container"><div class="main clearfix"><div class="column"><button class="md-trigger" data-modal="modal-16">Blur</button></div></div></div><div class="md-overlay"></div><!-- the overlay element -->');
 
             $(document).on('submit',"#generate-referral-form",(function(e) {
                 e.preventDefault();
@@ -94,7 +94,7 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
                 var referral_email = $("#referral-email").val();
                 $.ajax({
                     type:'GET',
-                    url: 'https://7911495308e5.ngrok.io/generate-referral-url?referral-name='+referral_name+'&referral-email='+referral_email+'&store-name='+shop_domain,
+                    url: 'https://luxbalance.nl/generate-referral-url?referral-name='+referral_name+'&referral-email='+referral_email+'&store-name='+shop_domain,
                     cache:false,
                     contentType: false,
                     processData: false,
@@ -136,7 +136,7 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
         });
 
         //Loading JS for popup
-        $.getScript( "https://7911495308e5.ngrok.io/js/popup/classie.js" )
+        $.getScript( "https://luxbalance.nl/js/popup/classie.js" )
         .done(function( script, textStatus ) {
             console.log( textStatus );
         })
@@ -144,14 +144,14 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
             $( "div.log" ).text( "Triggered ajaxError handler." );
         });
 
-        $.getScript( "https://7911495308e5.ngrok.io/js/popup/modalEffects.js" )
+        $.getScript( "https://luxbalance.nl/js/popup/modalEffects.js" )
         .done(function( script, textStatus ) {
             console.log( textStatus );
         })
         .fail(function( jqxhr, settings, exception ) {
             $( "div.log" ).text( "Triggered ajaxError handler." );
         });
-        $.getScript( "https://7911495308e5.ngrok.io/js/popup/cssParser.js" )
+        $.getScript( "https://luxbalance.nl/js/popup/cssParser.js" )
         .done(function( script, textStatus ) {
             console.log( textStatus );
         })

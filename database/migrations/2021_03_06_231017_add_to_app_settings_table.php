@@ -15,9 +15,9 @@ class AddToAppSettingsTable extends Migration
     {
         Schema::table('app_settings', function (Blueprint $table) {
             $table->string('popup_image')->nullable();
-            $table->longText('popup_heading')->default('GIVE $10 GET $10');
-            $table->longText('popup_description')->default('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour');
-            $table->longText('referral_link_help_text')->default('Use this url to earn money yourself &amp; give discounts to your loved ones');
+            $table->longText('popup_heading')->nullable();
+            $table->longText('popup_description')->nullable();
+            $table->longText('referral_link_help_text')->nullable();
         });
     }
 
