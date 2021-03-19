@@ -282,6 +282,18 @@ return [
                 'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'app/uninstalled'),
                 'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://52998355932c.ngrok.io/webhook/app-uninstall')
             ],
+            [
+                'topic' => env('SHOPIFY_WEBHOOK_2_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_2_ADDRESS', 'https://52998355932c.ngrok.io/webhook/app-uninstall')
+            ],
+            [
+                'topic' => env('SHOPIFY_WEBHOOK_3_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_3_ADDRESS', 'https://52998355932c.ngrok.io/webhook/app-uninstall')
+            ],
+            [
+                'topic' => env('SHOPIFY_WEBHOOK_4_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_4_ADDRESS', 'https://52998355932c.ngrok.io/webhook/app-uninstall')
+            ],
     ],
 
     /*

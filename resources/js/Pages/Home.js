@@ -14,18 +14,22 @@ import {AppProvider,
     TopBar,
     FooterHelp,
     Link,
+    TextField,
     ChoiceList,
 } from '@shopify/polaris';
 import { TitleBar, Toast } from "@shopify/app-bridge-react";
 
 function Home(settings) {
 
-    const [disablerightclick, setDisableRightClick] = useState(settings.app_settings[0].disable_right_click ? true : false);
-    const [disablef12, setDisableF12] = useState(settings.app_settings[0].disable_f12 ? true : false);
-    const [disablecopy, setDisableCopy] = useState(settings.app_settings[0].disable_copy ? true : false);
-    const [disablectrlshifti, setDisableCtrlShiftI] = useState(settings.app_settings[0].disable_ctrl_shift_i ? true : false);
-    const [disablectrlanykey, setDisableCtrlAnykey] = useState(settings.app_settings[0].disable_ctrl_anykey ? true : false);
-    const [disableselection, setDisableSelection] = useState(settings.app_settings[0].disable_text_image_selection ? true : false);
+    const [disableheaderseal, setHeaderseal] = useState(settings.app_settings[0].authorize_header ? true : false);
+    const [disablefooterseal, setFooterseal] = useState(settings.app_settings[0].authorize_footer ? true : false);
+    const [disablecontentseal, setContentseal] = useState(settings.app_settings[0].authorize_content ? true : false);
+
+    const [headersealstyling, setHeadersealstyling] = useState(settings.app_settings[0].hs_top_setting ? settings.app_settings[0].hs_top_setting : false);
+    const [headersealstylingv, setHeadersealstylingv] = useState(settings.app_settings[0].hs_left_setting ? settings.app_settings[0].hs_left_setting : false);
+
+    const [footersealstyling, setFootersealstyling] = useState(settings.app_settings[0].fs_top_setting ? settings.app_settings[0].fs_top_setting : false);
+    const [footersealstylingv, setFootersealstylingv] = useState(settings.app_settings[0].fs_left_setting ? settings.app_settings[0].fs_left_setting : false);
 
     const [active, setActive] = useState(false);
     const toggleActive = useCallback(() => setActive((active) => !active), []);
@@ -33,59 +37,70 @@ function Home(settings) {
         <Toast content="App Setting Updated" onDismiss={toggleActive} />
     ) : null;
     //For Display Messaging function
-    function handledisablerightclick(e){
-        setDisableRightClick(e);
+    function handleheaderseal(e){
+        setHeaderseal(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_right_click', e);
+        formData.append('authorize_header', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
 
-    function handledisablef12(e){
-        setDisableF12(e);
+    function handlefooterseal(e){
+        setFooterseal(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_f12', e);
+        formData.append('authorize_footer', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
 
-    function handledisablecopy(e){
-        setDisableCopy(e);
+    function handlecontentseal(e){
+        setContentseal(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_copy', e);
+        formData.append('authorize_content', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
 
-    function handledisablectrlshifti(e){
-        setDisableCtrlShiftI(e);
+    function handleHeaderStyling(e){
+        setHeadersealstyling(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_ctrl_shift_i', e);
+        formData.append('hs_top_setting', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
 
-    function handledisablectrlanykey(e){
-        setDisableCtrlAnykey(e);
+    function handleHeaderStylingv(e){
+        setHeadersealstylingv(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_ctrl_anykey', e);
+        formData.append('hs_left_setting', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
 
-    function handledisableselection(e){
-        setDisableSelection(e);
+    function handleFooterStyling(e){
+        setFootersealstyling(e);
         console.log(e);
         const formData = new FormData();
-        formData.append('disable_text_image_selection', e);
+        formData.append('fs_top_setting', e);
         Inertia.post('/disable-settings', formData);
         toggleActive();
     }
+
+    function handleFooterStylingv(e){
+        setFootersealstylingv(e);
+        console.log(e);
+        const formData = new FormData();
+        formData.append('fs_left_setting', e);
+        Inertia.post('/disable-settings', formData);
+        toggleActive();
+    }
+
+
 
     //Top Bar
     const theme = {
@@ -135,22 +150,90 @@ function Home(settings) {
                                     <FormLayout>
                                         <Checkbox
                                             label="Enable Header Seal"
-                                            checked={disablerightclick}
-                                            onChange={handledisablerightclick}
+                                            checked={disableheaderseal}
+                                            onChange={handleheaderseal}
                                             onClick={toggleActive}
                                         />
                                         <Checkbox
                                             label="Enable Footer Seal"
-                                            checked={disablef12}
-                                            onChange={handledisablef12}
+                                            checked={disablefooterseal}
+                                            onChange={handlefooterseal}
                                             onClick={toggleActive}
                                         />
                                         <Checkbox
                                             label="Enable Content Seal"
-                                            checked={disablecopy}
-                                            onChange={handledisablecopy}
+                                            checked={disablecontentseal}
+                                            onChange={handlecontentseal}
                                             onClick={toggleActive}
                                         />
+                                    </FormLayout>
+                                </Form>
+                            </Card>
+                        </Layout.AnnotatedSection>
+                        <Layout.AnnotatedSection title="authorized.by Header Seal Position" description="Set the position of the header seal in the website">
+                            <Card title="authorized.by Header Seal Position" sectioned>
+                                <Form>
+                                    <FormLayout>
+                                    <TextField
+                                        value={headersealstyling}
+                                        onChange={handleHeaderStyling}
+                                        label="Adjust Vertically"
+                                        type="text"
+                                        max="500"
+                                        helpText={
+                                            <span>
+                                                You can add both negative and positive values e.g: 10 / -10
+                                                Please use px or % with number to adjust the seal
+                                            </span>
+                                        }
+                                    />
+                                    <TextField
+                                        value={headersealstylingv}
+                                        onChange={handleHeaderStylingv}
+                                        label="Adjust Horizantally"
+                                        type="text"
+                                        max="100"
+                                        helpText={
+                                            <span>
+                                                You can add both negative and positive values 10 / -10
+                                                Please use px or % with number to adjust the seal
+                                            </span>
+                                        }
+                                    />
+                                    </FormLayout>
+                                </Form>
+                            </Card>
+                        </Layout.AnnotatedSection>
+                        <Layout.AnnotatedSection title="authorized.by Footer Seal Position" description="Set the position of the footer seal in the website">
+                            <Card title="authorized.by Footer Seal Position" sectioned>
+                                <Form>
+                                    <FormLayout>
+                                    <TextField
+                                        value={footersealstyling}
+                                        onChange={handleFooterStyling}
+                                        label="Adjust Vertically"
+                                        type="text"
+                                        max="100"
+                                        helpText={
+                                            <span>
+                                                You can add both negative and positive values e.g: 10 / -10
+                                                Please use px or % with number to adjust the seal
+                                            </span>
+                                        }
+                                    />
+                                    <TextField
+                                        value={footersealstylingv}
+                                        onChange={handleFooterStylingv}
+                                        label="Adjust Horizantally"
+                                        type="text"
+                                        max="100"
+                                        helpText={
+                                            <span>
+                                                You can add both negative and positive values e.g: 10 / -10
+                                                Please use px or % with number to adjust the seal
+                                            </span>
+                                        }
+                                    />
                                     </FormLayout>
                                 </Form>
                             </Card>

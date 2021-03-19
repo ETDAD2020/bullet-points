@@ -2,6 +2,8 @@
 
 use Log;
 use App\Models\User;
+use App\Models\Orders;
+use App\Models\ReferralDiscountCode;
 use App\Models\AppSettings;
 use App\Models\InsuranceOrders;
 use Illuminate\Bus\Queueable;
@@ -52,41 +54,45 @@ class OrdersCreateJob implements ShouldQueue
     public function handle()
     {
         $user = User::where('name', $this->shopDomain->toNative())->first();
-        $app_settings =  AppSettings::where('shopify_name', $user->name)->first();
-        Log::info($user);
-        Log::info($app_settings);
-
-        $insurance_variant_id =  $app_settings->variant_id;
-        $insurance_product_id =  $app_settings->product_id;
 
         $order = $this->data;
-        $line_items  = $order->line_items;
-        $order_entry = false;
-        foreach($line_items as $line_item)
-        {
-            if($line_item->variant_id == $insurance_variant_id || $line_item->id == $insurance_product_id )
-            {
-                $order_entry = true;
-            }
+        $order_id = $order->id;
+        $order_number = $order->order_number;
+        $order_email = $order->email;
+        $total_discount = $order->total_discounts;
+        $total_price = $order->total_price;
+        $discount_codes = $order->discount_codes;
+
+        foreach($discount_codes as $discount_code){
+            $discount_code_check = $discount_code->code;
         }
 
-        if($order_entry)
-        {
-            $insurance_order = new InsuranceOrders;
-            $insurance_order->order_id = $order->id;
-            $insurance_order->order_number = $order->number;
-            $insurance_order->shopify_name = $user->name;
-            $insurance_order->product_id = $insurance_product_id;
-            $insurance_order->price = $order->subtotal_price;
-            $insurance_order->status = '1';
-            $insert_order = $insurance_order->save();
-            if($insert_order){
-                Log::info('Order Created');
-                return true;
-            }else{
-                Log::info('Error');
-                return true;
-            }
+        $discount_code = new ReferralDiscountCode;
+        $check_discount_code = $discount_code->where("discount_code", $discount_code_check)->first();
+        if($check_discount_code == null){
+            return response()->json(array(
+                'success' => false
+            ), 200);
+        }
+
+        $order = new Orders;
+        $order->shop_name = $user->name;
+        $order->order_id = $order_id;
+        $order->order_number = $order_number;
+        $order->order_email = $order_email;
+        $order->total_discount = $total_discount;
+        $order->total_price = $total_price;
+        $order->discount_code = $discount_code_check;
+        $save = $order->save();
+
+        if($save){
+            return response()->json(array(
+                'success' => true
+            ), 200);
+        }else{
+            return response()->json(array(
+                'success' => true
+            ), 500);
         }
     }
 }

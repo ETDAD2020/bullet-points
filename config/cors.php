@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*', '/get-app-settings'],
+    'paths' => ['api/*', '/get-app-settings', '/generate-referral-url'],
 
     'allowed_methods' => ['*'],
 
