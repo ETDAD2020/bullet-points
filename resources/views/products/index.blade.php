@@ -6,7 +6,7 @@
             <div class="pl-3 d-flex justify-content-between">
                 <h3>Products</h3>
                 <div>
-                    <a href="{{ route('sync.products') }}?id={{ auth()->user()->id }}>" class="btn btn-primary">Sync Products</a>
+                    <a href="{{ route('sync.products') }}?id={{ auth()->user()->id }}" class="btn btn-primary">Sync Products</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                             <tr>
                                 <th scope="row"><img src="{{ $product->img }}" alt="" style="width: 90px; height: auto"></th>
                                 <td class="align-middle">{{ $product->title }}</td>
-                                <td class="align-middle"><a class="btn btn-primary" href="{{ route('products.show', $product->id, auth()->user()->id ) }}">Add Bullet Points</a></td>
+                                <td class="align-middle"><a class="btn btn-primary" href="{{ route('products.show', $product->id, $product->store_id ) }}">Add Bullet Points</a></td>
                             </tr>
                         @endforeach
                         </tbody>
