@@ -49,6 +49,9 @@ class CustomizersController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = $request->user_id;
+        Auth::loginUsingId($user_id, $remember = true);
+
         if(Customizer::where('store_id', Auth::user()->id)->exists()) {
             $settings_updated = Customizer::where('store_id', Auth::user()->id)->first();
             $settings = Customizer::find($settings_updated->id);
