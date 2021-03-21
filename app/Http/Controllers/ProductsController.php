@@ -19,7 +19,8 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $user_id = $request->id;
-        dd($user_id);
+
+        dd(Auth::loginUsingId($user_id, $remember = true));
         if(Auth::check()){
             $shop = Auth::user();
             $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
