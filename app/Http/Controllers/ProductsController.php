@@ -20,7 +20,7 @@ class ProductsController extends Controller
     {
         $user_id = $request->id;
 
-        dd(Auth::loginUsingId($user_id, $remember = true));
+        Auth::loginUsingId($user_id, $remember = true);
         if(Auth::check()){
             $shop = Auth::user();
             $products = Product::where('store_id', $shop->id)->latest()->paginate(5);
