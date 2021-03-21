@@ -48,9 +48,6 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = $request->user_id;
-        dd($user_id);
-        Auth::loginUsingId($user_id, $remember = true);
 
         $product = Product::find($request->product_id);
         if ($product->extra_details()->count() > 0) {
