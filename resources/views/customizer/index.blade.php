@@ -23,6 +23,7 @@
             <div class="row pl-3">
 
                 <form action="{{ route('settings.store') }}" method="POST">
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     <div class="d-flex text-right justify-content-end" style="width: 94% !important;">
                         <button class="btn btn-primary">Save</button>
                     </div>

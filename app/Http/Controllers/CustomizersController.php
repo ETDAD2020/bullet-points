@@ -17,7 +17,6 @@ class CustomizersController extends Controller
     public function index(Request $request)
     {
         $user_id = $request->id;
-
         Auth::loginUsingId($user_id, $remember = true);
         if(Auth::check()){
             $settings = Customizer::where('store_id', Auth::user()->id)->first();
