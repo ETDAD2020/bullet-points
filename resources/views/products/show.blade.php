@@ -44,6 +44,7 @@
                                     <button class="btn btn-primary generate-description-btn">Generate Extra Details</button>
                                     <form class="d-flex description-form" action="{{ route('products.store') }}" method="POST">
                                         @csrf
+                                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                         <textarea  name="description" class="description_text d-none"></textarea>
                                         <textarea  name="description_details_array" class="description_details_array d-none"></textarea>
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -136,7 +137,7 @@
  let color = $("#color_w").val();
             let icon = $("#icon_w").val();
             let emoji = $("#emoji_w").val();
-               
+
 
 
                 $('.single-row').each(function(){
@@ -151,7 +152,7 @@
 
                 filtered.forEach(function(item) {
                     if(item !== "") {
-                        $('.save-btn').prop('disabled', false);                        
+                        $('.save-btn').prop('disabled', false);
 			if(icon !== "") {
 				console.log(icon);
                             $('.description-list').append(`
