@@ -29,7 +29,7 @@
                             <tr>
                                 <th scope="row"><img src="{{ $product->img }}" alt="" style="width: 90px; height: auto"></th>
                                 <td class="align-middle">{{ $product->title }}</td>
-                                <td class="align-middle"><a class="btn btn-primary" href="{{ route('products.show', $product->id, $product->store_id ) }}">Add Bullet Points</a></td>
+                                <td class="align-middle"><a class="btn btn-primary" href="{{ route('products.show', $product->id ) }}?id={{ auth()->user()->id }}">Add Bullet Points</a></td>
                             </tr>
                         @endforeach
                         </tbody>
