@@ -32,7 +32,7 @@
                         <div class="media-body p-2">
                             <h6 class="media-title m-0">Icons/Emojis</h6>
                             <div class="media-text">
-                                <h3>50</h3>
+                                <h3>147</h3>
                             </div>
                         </div>
                     </div>
