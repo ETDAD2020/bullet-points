@@ -161,8 +161,11 @@ class ProductsController extends Controller
         //
     }
 
-    public function storeProducts($next = null)
+    public function storeProducts($next = null, Request $request)
     {
+        $user_id = $request->id;
+        Auth::loginUsingId($user_id, $remember = true);
+
         $shop = Auth::user();
         $products = $shop->api()->rest('GET', '/admin/products.json', [
             'limit' => 250,
