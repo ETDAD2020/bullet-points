@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-non')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400">
