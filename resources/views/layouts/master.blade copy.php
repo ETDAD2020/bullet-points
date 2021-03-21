@@ -41,7 +41,7 @@
 <body>
 
 <nav class="navbar navbar-expand p-0">
-    <a class="navbar-brand text-left col-xs-12 col-md-3 col-lg-2 mr-2 text-white" ><img src="{{ asset('IconTransp.png') }}" alt="" style="width: 75px; height: auto;">Bullet Pointer</a>
+    <a class="navbar-brand text-left col-xs-12 col-md-3 col-lg-2 mr-2 text-white" ><img src="{{ asset('IconTransp.png') }}" alt="" style="width: 75px; height: auto;">Triggersy</a>
     <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
         <span class="oi oi-menu"></span>
     </button>
