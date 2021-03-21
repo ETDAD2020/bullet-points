@@ -48,7 +48,7 @@
                     @auth
                         @if(auth()->user()->role != 'admin')
                             <li class="{{ request()->is('/') ? 'active' : ''}}"><a href="{{ route('home') }}?id={{ auth()->user()->id }}"><span class="oi oi-dashboard"></span> Dashboard</a></li>
-                            <li class="{{ request()->is('products') ? 'active' : ''}}"><a href="{{ route('products.index') }}?id='{{ auth()->user()->id }}'"><span class="oi oi-pie-chart"></span>Products</a></li>
+                            <li class="{{ request()->is('products') ? 'active' : ''}}"><a href="{{ route('products.index') }}?id={{ auth()->user()->id }}"><span class="oi oi-pie-chart"></span>Products</a></li>
                             <li class="{{ request()->is('settings') ? 'active' : ''}}"><a href="{{ route('settings.index') }}?id='{{ auth()->user()->id }}'"><span class="oi oi-pie-chart"></span>Settings</a></li>
                             <li class="{{ request()->is('instructions') ? 'active' : ''}}"><a href="{{ route('instructions') }}?id='{{ auth()->user()->id }}'"><span class="oi oi-pie-chart"></span>Instructions</a></li>
                         @else
