@@ -14,8 +14,11 @@ class CustomizersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $user_id = $request->id;
+
+        Auth::loginUsingId($user_id, $remember = true);
         if(Auth::check()){
             $settings = Customizer::where('store_id', Auth::user()->id)->first();
             return view('customizer.index')->with('settings', $settings);

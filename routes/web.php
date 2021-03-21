@@ -19,9 +19,9 @@ Route::get('/', function () {
 })->middleware(['auth.shopify', 'billable'])->name('home');
 
 Route::resource('products', 'ProductsController');
+Route::resource('settings', 'CustomizersController');
+Route::get('/instructions', 'CustomizersController@showInstructions')->name('instructions');
 Route::middleware(['auth.shopify'])->group(function () {
-    Route::resource('settings', 'CustomizersController');
-    Route::get('/instructions', 'CustomizersController@showInstructions')->name('instructions');
     Route::get('sync/products', 'ProductsController@storeProducts')->name('sync.products');
 });
 
