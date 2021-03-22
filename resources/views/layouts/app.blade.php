@@ -61,7 +61,7 @@
       <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #16495c;">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: linear-gradient(to top, #16495c, #16495c);">
           <ul class="nav">
             <li class="nav-item nav-profile">
               {{-- <a href="#" class="nav-link">
