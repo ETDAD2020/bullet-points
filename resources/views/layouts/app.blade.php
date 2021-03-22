@@ -33,8 +33,7 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
-            Sharepal </a>
+          <a class="navbar-brand brand-logo" href="{{ route('home') }}"> <img src="/assets/images/logo.png" alt="Sharealp Logo"></a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
         </div>
@@ -176,7 +175,7 @@
   <script src="/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
   <script src="/assets/js/custom.js" type="text/javascript"></script>
   <script src="/js/toastr.min.js" type="text/javascript"></script>
-  
+
   @yield('scripts')
 </body>
 </html>
