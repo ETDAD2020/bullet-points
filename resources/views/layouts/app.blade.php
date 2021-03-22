@@ -32,7 +32,7 @@
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" style="background-color: #16495c;">
           <a class="navbar-brand brand-logo" href="{{ route('home') }}"> <img src="/assets/images/logo.png" alt="Sharealp Logo"></a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
@@ -61,7 +61,7 @@
       <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #16495c;">
           <ul class="nav">
             <li class="nav-item nav-profile">
               {{-- <a href="#" class="nav-link">
