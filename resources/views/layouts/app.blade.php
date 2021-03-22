@@ -63,7 +63,7 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: linear-gradient(to top, #16495c, #16495c);">
           <ul class="nav">
-            <li class="nav-item nav-profile">
+            <li class="nav-item nav-profile" style="margin-bottom: 75px;">
               {{-- <a href="#" class="nav-link">
                 <div class="profile-image">
                   <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
