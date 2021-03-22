@@ -93,7 +93,7 @@ body {
 .drop_target:hover,
 .drop_target.dropping {
       color: #5768f3;
-  
+
 }
 .drop_target:hover:before,
 .drop_target.dropping:before {
@@ -194,4 +194,9 @@ body {
 }
 .setting:last-of-type {
 /*  height: 1500px;*/
+}
+
+.sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]) {
+    background: #0b7cf5 !important;
+    padding-left: 65px !important;
 }
