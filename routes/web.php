@@ -21,6 +21,11 @@ Route::get('/', function (Request $request) {
     return view('welcome');
 })->middleware(['auth.shopify', 'billable'])->name('home');
 
+Route::get('/dashboard', function (Request $request) {
+    $user_id = $request->id;
+    Auth::loginUsingId($user_id, $remember = true);
+    return view('welcome');
+})->name('dashboards');
 Route::resource('products', 'ProductsController');
 Route::resource('settings', 'CustomizersController');
 Route::get('/instructions', 'CustomizersController@showInstructions')->name('instructions');
