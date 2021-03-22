@@ -30,7 +30,7 @@ class CustomizersController extends Controller
     public function showInstructions(Request $request) {
         $user_id = $request->user_id;
         Auth::loginUsingId($user_id, $remember = true);
-        return view('customizer.instructions');
+        return view('customizer.instructions', ["user_id" => $user_id]);
     }
 
     /**
