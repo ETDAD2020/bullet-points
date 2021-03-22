@@ -1,9 +1,9 @@
 @extends('layouts.master-non')
 @section('menu')
-<li class="{{ request()->is('/') ? 'active' : ''}}"><a href="{{ route('home') }}?id=$user_id"><span class="oi oi-dashboard"></span> Dashboard</a></li>
-<li class="{{ request()->is('products') ? 'active' : ''}}"><a href="{{ route('products.index') }}?id=$user_id"><span class="oi oi-pie-chart"></span>Products</a></li>
-<li class="{{ request()->is('settings') ? 'active' : ''}}"><a href="{{ route('settings.index') }}?id=$user_id"><span class="oi oi-pie-chart"></span>Settings</a></li>
-<li class="{{ request()->is('instructions') ? 'active' : ''}}"><a href="{{ route('instructions') }}?id=$user_id"><span class="oi oi-pie-chart"></span>Instructions</a></li>
+<li class="{{ request()->is('/') ? 'active' : ''}}"><a href="{{ route('home') }}?id={{$user_id}}"><span class="oi oi-dashboard"></span> Dashboard</a></li>
+<li class="{{ request()->is('products') ? 'active' : ''}}"><a href="{{ route('products.index') }}?id={{$user_id}}"><span class="oi oi-pie-chart"></span>Products</a></li>
+<li class="{{ request()->is('settings') ? 'active' : ''}}"><a href="{{ route('settings.index') }}?id={{$user_id}}"><span class="oi oi-pie-chart"></span>Settings</a></li>
+<li class="{{ request()->is('instructions') ? 'active' : ''}}"><a href="{{ route('instructions') }}?id={{$user_id}}"><span class="oi oi-pie-chart"></span>Instructions</a></li>
 @endsection
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400">
