@@ -68,7 +68,7 @@
                             <div class="form-group">
                               <div class="form-check form-check-flat">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" id="app-live" @if($app_settings->app_live == "1") checked="" onchange="update_settings('{{Auth::user()->name}}', 'app_live', 1)" @else onchange="update_settings('{{Auth::user()->name}}', 'app_live', 0)" @endif> Enable App
+                                  <input type="checkbox" class="form-check-input" id="app-live" @if($app_settings->app_live == "1") checked="" onchange="update_settings('{{Auth::user()->name}}', 'app_live', 0)" @else onchange="update_settings('{{Auth::user()->name}}', 'app_live', 1)" @endif> Enable App
                                 </label>
                                 {{-- <small><i class="input-helper">Check this box if you want to enable the app on frontend</i></small> --}}
                               </div>
