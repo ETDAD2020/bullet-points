@@ -82,6 +82,10 @@ class SettingsController extends Controller
             $app_setting->referrer_settings = $setting_type;
         }
 
+        if($setting_type == "app_live"){
+            $app_setting->referrer_settings = $setting_type;
+        }
+
         $save = $app_setting->save();
 
         if($save){
