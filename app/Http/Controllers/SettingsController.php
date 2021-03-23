@@ -101,6 +101,7 @@ class SettingsController extends Controller
         $user = Auth::user();
         $app_settings = new AppSetting;
         $settings = $app_settings->where('shop_name', $user->name)->first();
+        dd($settings);
         if($settings == null){
             $app_settings->user_id = $user->id;
             $app_settings->shop_name = $user->name;
