@@ -56,25 +56,29 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', funct
 
         $.getJSON("https://luxbalance.nl/get-app-settings?shop_name=" + shop_domain, function (data) {
 
+            if(data.app_live === "0" || data.app_live === null){
+                return false;
+            }
+
             if(data === null)
             {
-                alert("Please adjust setting of Shareall app to use this app. Thanks")
+                console.log("Please adjust setting of Shareall app to use this app. Thanks")
                 return false;
             }
 
             //Error If referrer settings are null
             if( data.referrer_settings === null){
-                alert("In referrer settings please select fixed or pecentage for discount and reward")
+                console.log("In referrer settings please select fixed or pecentage for discount and reward")
                 return false;
             }
 
              //Error If percentage/fixed amount is not set
             if( data.amount === null){
                 if( data.referrer_settings === "percentage"){
-                    alert("Please enter the percentage for discount.")
+                    console.log("Please enter the percentage for discount.")
                     return false;
                 }else{
-                    alert("Please enter the fixed amount for discount ")
+                    console.log("Please enter the fixed amount for discount ")
                     return false;
                 }
             }
