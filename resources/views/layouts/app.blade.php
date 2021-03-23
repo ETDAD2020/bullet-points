@@ -26,6 +26,11 @@
     <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css'>
     <link rel="stylesheet" href="assets/upload/style.css">
     <link rel="stylesheet" href="/css/toastr.css">
+    <style>
+        li.nav-item.active {
+            background-color: #0062ba;
+        }
+    </style>
     @yield('styling_head')
   </head>
   <body>
