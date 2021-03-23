@@ -15,9 +15,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function (Request $request) {
-    $user_id = $request->id;
-    Auth::loginUsingId($user_id, $remember = true);
+Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth.shopify', 'billable'])->name('home');
 
