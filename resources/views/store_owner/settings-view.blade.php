@@ -82,7 +82,7 @@
                               </div>
                               <div class="form-check form-check-flat">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" id="popup-order-status" @if($app_settings->popup_order_status == "order_status") checked="" onchange="update_settings('{{Auth::user()->name}}', 'order_status', 1)" @else onchange="update_settings('{{Auth::user()->name}}', 'order_status', 0)" @endif > Order Status Page <i class="input-helper"></i></label>
+                                  <input type="checkbox" class="form-check-input" id="popup-order-status" @if($app_settings->popup_order_status == "order_status") checked="checked" onchange="update_settings('{{Auth::user()->name}}', 'order_status', 1)" @else onchange="update_settings('{{Auth::user()->name}}', 'order_status', 0)" @endif > Order Status Page <i class="input-helper"></i></label>
                               </div>
                             </div>
 
