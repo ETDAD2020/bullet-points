@@ -64,8 +64,18 @@
                         <div class="alert alert-danger app-setting-error-alert" role="alert" style="display: none;">
                         </div>
                         <div class="card-body">
-                          <h4 class="card-title">Popup Settings</h4>
-                          <div class="form-group">
+                            <h4 class="card-title">App Live</h4>
+                            <div class="form-group">
+                              <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" id="app-live" @if($app_settings->app_live == "1") checked="" onchange="update_settings('{{Auth::user()->name}}', 'app_live', 1)" @else onchange="update_settings('{{Auth::user()->name}}', 'app_live', 0)" @endif> Enable App
+                                </label>
+                                <small><i class="input-helper">Check this box if you want to enable the app on frontend</i></small>
+                              </div>
+                            </div>
+
+                            <h4 class="card-title">Popup Settings</h4>
+                            <div class="form-group">
                               <div class="form-check form-check-flat">
                                 <label class="form-check-label">
                                   <input type="checkbox" class="form-check-input" id="popup-all-website" @if($app_settings->popup_all_website == "all_website") checked="" onchange="update_settings('{{Auth::user()->name}}', 'all_website', 1)" @else onchange="update_settings('{{Auth::user()->name}}', 'all_website', 0)" @endif> All Website <i class="input-helper"></i></label>
