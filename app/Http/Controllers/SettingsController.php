@@ -83,7 +83,7 @@ class SettingsController extends Controller
         }
 
         if($setting_type == "app_live"){
-            $app_setting->app_live = $setting_type;
+            $app_setting->app_live = $check;
         }
 
         $save = $app_setting->save();
@@ -105,7 +105,6 @@ class SettingsController extends Controller
         $user = Auth::user();
         $app_settings = new AppSetting;
         $settings = $app_settings->where('shop_name', $user->name)->first();
-        dd($settings);
         if($settings == null){
             $app_settings->user_id = $user->id;
             $app_settings->shop_name = $user->name;
