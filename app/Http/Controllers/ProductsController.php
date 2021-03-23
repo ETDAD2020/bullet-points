@@ -161,7 +161,26 @@ class ProductsController extends Controller
         //
     }
 
-    public function storeProducts($next = null, Request $request)
+    public function storeProducts($next = null)
+    {
+        $shop = Auth::user();
+        $products = $shop->api()->rest('GET', '/admin/products.json', [
+            'limit' => 250,
+            'page_info' => $next
+        ]);
+
+        foreach ($products['body']['container']['products'] as $product) {
+            $this->createProduct($product);
+        }
+
+        if (isset($products['link']['next'])) {
+            $this->storeProducts($products['link']['next']);
+        }
+
+        return redirect()->back()->with('success', 'Products Synced Successfully');
+    }
+
+    public function storeProducts1($next = null, Request $request)
     {
         $user_id = $request->id;
         Auth::loginUsingId($user_id, $remember = true);
@@ -178,7 +197,7 @@ class ProductsController extends Controller
         }
 
         if (isset($products['link']['next'])) {
-            $this->storeProducts($products['link']['next']);
+            $this->storeProducts1($products['link']['next']);
         }
 
         return redirect()->back()->with('success', 'Products Synced Successfully');
