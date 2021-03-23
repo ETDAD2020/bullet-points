@@ -93,7 +93,7 @@ function update_settings(store_name, setting_type, check = 0){
                     $("#popup-all-website").attr("onchange", "update_settings('"+store_name+"', 'all_website', 1)")
                 }
 
-                if(setting_type === "all_website" && check === 1){
+                if(setting_type === "order_status" && check === 1){
                     $("#popup-order-status").attr("onchange", "update_settings('"+store_name+"', 'order_status', 0)");
                 }else{
                     $("#popup-order-status").attr("onchange", "update_settings('"+store_name+"', 'order_status', 1)")
