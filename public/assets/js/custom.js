@@ -102,7 +102,7 @@ function update_settings(store_name, setting_type, check = 0){
                 if(setting_type === "percentage"){
                     $(".percentage-option").show();
                     $(".fixed-option").hide();
-                }else{
+                }else if(setting_type === "fixed"){
                     $(".percentage-option").hide();
                     $(".fixed-option").show();
                 }
@@ -177,7 +177,7 @@ $(document).ready( function () {
         });
     }));
 
-    
+
 
     // $('#update-popup-settings').on('submit',(function(e) {
     //     e.preventDefault();
