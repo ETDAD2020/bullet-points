@@ -70,6 +70,7 @@ class OrdersCreateJob implements ShouldQueue
         $discount_code = new ReferralDiscountCode;
         $check_discount_code = $discount_code->where("discount_code", $discount_code_check)->first();
         if($check_discount_code == null){
+            Log::info('discount code not available');
             return response()->json(array(
                 'success' => false
             ), 200);
@@ -86,6 +87,7 @@ class OrdersCreateJob implements ShouldQueue
         $save = $order->save();
 
         if($save){
+            Log::info('New order generated');
             return response()->json(array(
                 'success' => true
             ), 200);
