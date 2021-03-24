@@ -40,6 +40,7 @@ class ReferralController extends Controller
             $referral->email = $referral_email;
             $referral->url = $url;
             $referral->verification_code = $verification_code;
+            $referral->shopify_name = $user->name;
             $save = $referral->save();
             $referrals_information = $referral->where("verification_code", $verification_code)->first();
             if($save){
