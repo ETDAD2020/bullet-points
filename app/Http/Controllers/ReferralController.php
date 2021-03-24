@@ -19,7 +19,7 @@ class ReferralController extends Controller
         $referral_name = $request->referral_name;
         $referral_email = $request->referral_email;
         $verification_code =  time();
-        $url = "https://app.shareall.com/referral/".$referral_name;
+        $url = "https://luxbalance.nl/referral/".$referral_name;
 
         $referral = new Referral;
         $referral_info = $referral->where('email', $referral_email)->first();
