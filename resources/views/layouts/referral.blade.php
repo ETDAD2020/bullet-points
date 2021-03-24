@@ -26,15 +26,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css'>
     <link rel="stylesheet" href="assets/upload/style.css">
+    <style>
+        li.nav-item.active {
+            background-color: #0062ba;
+        }
+    </style>
     @yield('styling_head')
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" style="background-color: #16495c;">
           <a class="navbar-brand brand-logo" href="index.html">
-            Sharepal </a>
+            <img src="/assets/images/logo.png" alt="Sharealp Logo"> </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
         </div>
@@ -71,18 +76,18 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: linear-gradient(to top, #16495c, #16495c);">
             <ul class="nav">
-              <li class="nav-item nav-profile">
-                <a href="#" class="nav-link">
+              <li class="nav-item nav-profile"  style="margin-bottom: 75px;">
+                {{-- <a href="#" class="nav-link">
                   <div class="profile-image">
-                    {{-- <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image"> --}}
+                    {{-- <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
                     <div class="dot-indicator bg-success"></div>
                   </div>
                   <div class="text-wrapper">
                     <p class="profile-name" style="font-size: 11px;">{{ Auth::user()->name }}</p>
                   </div>
-                </a>
+                </a> --}}
               </li>
               <li class="nav-item nav-category">Main Menu</li>
               <li class="nav-item">
