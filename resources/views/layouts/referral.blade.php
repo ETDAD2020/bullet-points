@@ -48,7 +48,9 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> </a>
+                {{-- <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">  --}}
+                <p class="rounded-circle" style="background: #df412c;color: #ffffff;font-size: 40px;border-radius: 100%  !important;width: 40px;margin: auto;text-align: center;">{{ substr(Auth::user()->name,0,1) }}</p>
+              </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   {{-- <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> --}}
