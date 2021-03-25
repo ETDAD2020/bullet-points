@@ -52,7 +52,7 @@
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   {{-- <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> --}}
-                  <p class="rounded-circle" style="background: #df412c;color: #ffffff;font-size: 60px;border-radius: 100%  !important;width: 30%;margin: auto;"{{ substr(Auth::user()->name,6) }}</p>
+                  <p class="rounded-circle" style="background: #df412c;color: #ffffff;font-size: 60px;border-radius: 100%  !important;width: 30%;margin: auto;"{{ substr(Auth::user()->name,0,1) }}</p>
                   <p class="mb-1 mt-3 font-weight-semibold">{{ Auth::user()->name }}</p>
                   <p class="font-weight-light text-muted mb-0">{{ Auth::user()->email }}</p>
                 </div>
